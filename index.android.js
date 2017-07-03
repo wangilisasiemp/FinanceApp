@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import { Container, Content, Badge,Icon } from 'native-base';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {
   AppRegistry,
   StyleSheet,
@@ -16,39 +16,63 @@ import {
 export default class FinanceApp extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+      <View style={styles.mainContainer}>
+        <View style={styles.headerContainer}>
+            <View style={styles.leftHeaderContainer}>
+                <Text style={styles.logoText}>UPATU</Text>
+            </View>
+            <View style={styles.rightHeaderContainer}>
+                <Icon name='search' color='#ffffff' size={23} style={{padding:5}}/>
+                <Icon name='call' color='#ffffff' size={23} style={{padding:5}}/>
+                <Icon name='more-vert' color='#ffffff' size={23} style={{padding:5}}/>
+
+            </View>
+        </View>
+        <View style={styles.contentContainer}>
+            <Text> this is the content container </Text>
+
+        </View>
+   
+      
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#ffffff',
+  },
+  headerContainer: {
+    backgroundColor: '#6633CC',
+    flex: 1,
+    flexDirection : 'row',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent : 'space-between',
+    paddingRight: 5,
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  contentContainer: {
+    backgroundColor: '#ffffff',
+    flex : 6,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  rightHeaderContainer:{
+    flexDirection:'row',
+    alignItems:'flex-end',
   },
+
+  leftHeaderContainer: {
+    alignItems: "flex-start",
+    flexDirection: "row",
+  },
+  logoText:{
+    color: 'white',
+    fontWeight: "bold",
+    fontSize: 16,
+    alignItems: "flex-start",
+    marginLeft: 10,
+  },
+
 });
 
 AppRegistry.registerComponent('FinanceApp', () => FinanceApp);
