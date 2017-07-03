@@ -5,6 +5,7 @@
  */
 
 import React, { Component } from 'react';
+import { Container, Content, Badge,Icon } from 'native-base';
 import {
   AppRegistry,
   StyleSheet,
